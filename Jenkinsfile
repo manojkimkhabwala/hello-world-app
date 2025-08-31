@@ -28,7 +28,7 @@ pipeline {
                         
                          // The key file variable now holds the path to the key.
                         sh "ssh -i ${KEY_FILE} -o StrictHostKeyChecking=no ${TOMCAT_USER}@54.80.24.66 'sudo systemctl stop tomcat && sudo rm -rf /opt/tomcat/webapps/hello-world-app.war && sudo rm -rf /opt/tomcat/webapps/hello-world-app/'"
-                        sh "scp -i ${KEY_FILE} -o StrictHostKeyChecking=no target/hello-world-app-*.war ${TOMCAT_USER}@54.80.24.66:/opt/tomcat/webapps/"
+                        sh "scp -i ${KEY_FILE} -o StrictHostKeyChecking=no 'target/hello-world-app.war' ${TOMCAT_USER}@54.80.24.66:/opt/tomcat/webapps/"
                         sh "ssh -i ${KEY_FILE} -o StrictHostKeyChecking=no ${TOMCAT_USER}@54.80.24.66 'sudo systemctl start tomcat'"                   
                     }
                 }
