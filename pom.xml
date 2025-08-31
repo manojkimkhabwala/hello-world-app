@@ -24,5 +24,12 @@
     </dependencies>
     <build>
         <finalName>hello-world-app</finalName>
+        <plugins>
+            <plugin>            
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <version>3.8.4</version>
+            </plugin>
+        </plugins>
     </build>
 </project>
